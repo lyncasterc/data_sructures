@@ -19,7 +19,7 @@ int main()
     rec_ptr->length = 20;
     cout << rec_ptr->length << endl; 
 
-    //creating dynamic struct in heap
+    //creating dynamic structure in heap
     Rectangle *p;
     p = new Rectangle; // p is now a dyanmic structure in heap
 
