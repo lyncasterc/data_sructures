@@ -38,5 +38,5 @@ int main()
     cout << calc.add() << endl;
     cout << calc2.add() << endl;
 
-    return 0;
+    return 0; 
 }

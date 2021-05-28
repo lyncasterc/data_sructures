@@ -1,0 +1,41 @@
+-- Time Complexity:
+    - the time it takes for a computer to perform  a task.
+
+    - depends on the procedure being used
+
+    - example:
+        - an array/list can have n elements.
+
+        - time complexity for adding all elements or searching depends on how many elements there are, so it takes n or order of n. O(n). 
+
+        - time complexity for looping through array, and comparing each element with all the other elemets in array is O(n^2). You'd be looping through array, and then having a nested inner loop going through the array.
+
+        - time complexity for dividing array continously in half is log(n) (base 2).
+            - for(i = n; i>1; i /= 2) n =  length of list
+            {
+                ...
+            }
+            
+            - i = n;
+              while(i >1)
+              {
+                  ...
+                  i /= 2;
+              }
+        - matrix: O(n)
+
+        - array of linked lists: O(m+n)
+
+        - Tree: O(log n)
+
+-- Space Complexity:
+    - how much space is consumed in main memory during executin of program.
+
+    
+
+        
+
+
+
+
+        

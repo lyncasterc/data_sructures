@@ -1,0 +1,31 @@
+-- Physical Data Structure:
+    - Hold the actual data
+
+    - Array:
+        A = {8, 3, 4, 5, 6} 
+             0  1  2  3  4  
+        - fixed size 
+        - can be created in stack or heap
+    
+    - Linked List:
+        8 -> 5 -> 6 -> 7 -> null   
+        ^ - head       ^ - tail
+        
+        - collection of nodes that have data and links to the next node.
+
+        - length of list can increase or reduce dynamically. 
+
+        - created in heap
+
+-- Logical Data Structure:
+    - Stack  (linear, LIFO)
+    - Queue  (linear, FIFO)
+    - Trees  (non-linear)
+    - Graph  (non-linear)
+    - Hash tables (tabular)
+
+    -performs operation on data(searching, insertion, deletion, etc)
+
+
+
+ 

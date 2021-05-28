@@ -1,0 +1,77 @@
+-- Memory:
+    - divided into bytes.
+
+    - each byte has an address.
+
+    - addresses are linear, not like a coordinate system.
+
+    - Large memory on computers (4GB, 8GB, etc) are divided into memory segments.
+
+    -- How Programs Use Memory:
+        - memory segment will be seperated into code section, heap, and stack.
+
+        - program is executed - code is brought into the code section.
+
+        -- Stack:
+            -example code: 
+                int main()
+                {
+                    int a; // 2 bytes 
+                    float b; // 4 btyes
+                }
+            - when the code is compiled and run, main is brought into the code section. 
+
+            - 6 bytes of memory is allocated in stack for the variables in stack frame for main. 
+
+            - this is called static memory allocation bc the compliler decided how much memory to allocate for main in stack frame before the program is executed. 
+
+            -- if multiple function calls are made:
+                - the function codes are copied to code section.
+
+                - the execution starts at main function, and the stack frame is created for main.
+
+                - when a function call is run, a new stack frame is created for that function.
+
+                - the stack feame is created in order: main stack is on the bottom, and subsequent function calls are on top.
+                    > Func2 <--- program is here
+                    > Func1
+                    > Main
+
+                - when most recent function terminates, its stack frame is popped off and programs goes down to the next stack.
+                   
+                        > Func1 <--- program is here
+                        > Main
+        
+        -- Heap:
+            - a pile of random things. Unorganized memory.
+
+            - should be used as a resource. Using when needed and released when not needed.
+
+            - programs can not directly access heap memory, but can be used w/ pointers.
+
+            - example code:
+                int main()
+                {
+                    int *p; // 2 bytes
+                    p = new int[5];
+                }
+            - main will allocate 2 bytes in the main stack frame for the pointer.
+            
+            - then memory will be allocated in heap for an array of 5 ints. 
+            
+            - the p in main stack frame points to the first int in heap array.
+
+            - when you are done with the array in heap, release it:
+                delete []p;
+                p = null;
+
+
+
+
+
+
+
+ 
+
+
+

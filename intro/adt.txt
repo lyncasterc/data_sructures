@@ -1,0 +1,11 @@
+--Abstract Data Type:
+
+    -Data type:
+        - Representation of data (length, space for storing element)
+        - operation on data
+        - ex: an integer variable has several operations(+,-,/,++,--,etc)
+
+    - Abstract
+        - internal details are hidden, meaning you can create an object (such as a list) and peform operations on it w/o knowing how it works.
+
+    
