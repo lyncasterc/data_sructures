@@ -31,6 +31,21 @@
 -- Space Complexity:
     - how much space is consumed in main memory during executin of program.
 
+-- Recurrence Relation:
+    - void func1(int n)  // T(n) --> time complexity
+    {
+        if(n > 0)         // 1 time unit
+        {
+            cout << n; // 1 time unit
+
+            func1(n-1) // T(n-1)
+        }
+    }
+
+    - sum of time is: T(n) = T(n-1) + 2 when n > 0. 
+        - when n = 0, the func1 breaks and it takes one time unit to check that if statement
+    - Solving Recurrence Relation: check calc 1 notebook
+
     
 
         

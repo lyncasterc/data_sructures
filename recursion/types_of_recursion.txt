@@ -1,0 +1,92 @@
+-- Types:
+
+    - Tail:
+        - when the rercussive call is the last statement;
+
+        - ex: 
+            void count_down(int n)
+            {
+                if (n > 0)
+                {
+                    cout << n << " ";
+                    count_down(n-1); // 
+                }
+            };
+             - the last line in the if statement is the rercussive call.
+
+             - the statements before the recursive call happen at when the function is called. when the function is returning and popping back the stack, the statements are not being executed.
+
+             - tail recursions are easily rewritten as loops:
+
+                void count_down(int n)
+                {
+                    while (n > 0)
+                    {
+                        cout << n << " ";
+                        n--; // 
+                    }
+                };
+
+                - this function performs exactly the same as the last one. Both functions time complexity is O(n).
+
+                - the loop function has a space complexity of 
+                O(1) because it is only called once, however the tail recursive function will take more space.
+                    -therefore loops are more efficiient than tail recursions.
+    
+    - Head recursion:
+        - when the recursive statement is the first statement in the function.
+
+        - ex: 
+            void count_up(int n)
+            {
+                if (n > 0)
+                {
+                    count_up(n-1); 
+                    cout << n << " ";
+                }   
+            };
+
+        - all the statements are processed when the function is returning and popping off the stack
+
+        - loop version:
+
+            void count_up(int n)
+                {
+                    int i = 0;
+                    while(i <= n)
+                    {
+                        i++; 
+                        cout << i << " ";
+                    }   
+                };
+
+        - more difficult to directly convert head recursions to loops. 
+
+    - Linear recursion:
+        - functions that only call themselves once.
+         (look at previous examples).
+    
+    - Tree recursion:
+        - rercussive that calls itself more than once.
+        
+        ex:
+            void func(int n)
+            {
+                if (n > 0)
+                {
+                    cout << n << " ";
+                    func(n-1);
+                    func(n-1);
+                }   
+            }
+            - O(2^n)
+
+    - Indirect Recursion 
+         - may use more than one function
+
+
+
+
+
+
+
