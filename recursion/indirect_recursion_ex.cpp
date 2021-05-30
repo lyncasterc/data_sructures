@@ -27,6 +27,6 @@ void func_b(int n)
 
 int main()
 {
-    // func_a(3);
+    func_a(3);
 
 }

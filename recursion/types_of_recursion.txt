@@ -84,6 +84,44 @@
     - Indirect Recursion 
          - may use more than one function
 
+         - example: a function a that calls another function b, which calls function a.
+
+                void func_b(int n);
+                void func_a(int n)
+                {
+                    if (n > 0)
+                    {
+                        cout << n << " ";
+                        func_b(n-1);
+                    }
+                    
+                };
+                void func_b(int n)
+                {
+                    if (n > 1)
+                    {
+                        cout << n << " ";
+                        func_a(n/2);
+                    }
+                    
+                };
+
+    - Nested Recursion:
+        - function passes itself as a parameter into itself. 
+
+        - ex: int func(int n)
+        {
+            if (n > 100)
+            {
+                return n - 10;
+            }
+            else
+            {
+                return func(func(n+11));
+            }
+        };
+        
+
 
 
 
