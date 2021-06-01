@@ -1,0 +1,51 @@
+- arrays are vectors
+
+- Array declarations:
+    - int A[5]; --> array filled w/ garbage values
+    
+    - int A[5] = {1,2,3,4,5}; --> direct declaration/initialization of all elements
+    
+    - int A[5] = {1,2}; --> partially initialized [1,2,0,0,0]
+    
+    - int A[] = {1,2,3,4,5} --> no size given, array space in memory will change depending on amount of elements.
+
+- Accessing elements:
+    int A[5] = {1,2,3,4,5};
+    
+    - A[1]; // 2
+
+    - 1[A]; // 2
+
+    - for(int i = 0; i < 5; i++)
+    {
+        cout << A[i]; //1,2,3,4,5
+    }
+    
+    -Accessing element with pointer: 
+        - *(A+1); // 2
+
+- Static vs Dynamic:
+    - in C++, size of array is decided at run-time. 
+
+    - in C, size of array is decided at compile time and cannot change.
+
+    - creating array in heap:
+        - int *p = new int[5]; // creates array of size 5 in heap memory
+
+- 2D Arrays:
+    - int A[3][4]; //3 rows, 4 columns
+    
+    - initializating 2D arrays:
+    
+    - array of arrays of column length, each array representing a row
+    
+    ex:
+     - int arr[3][4] = {
+         {1, 2, 3, 4},
+         {5, 6, 7, 8},
+         {9, 10, 11, 12}
+     }; 
+        -  arr[0][2] // first row, third column (3)
+    
+
+    
