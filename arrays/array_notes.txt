@@ -47,5 +47,25 @@
      }; 
         -  arr[0][2] // first row, third column (3)
     
+    -in memory/compile time , 2D arrays are linear (m x n)
+
+        - row major mapping: 2d arrays are mapped linearly by their rows.
+
+            - Address(A[i][j]) = Lo + [i * n + j] * w
+        
+        - column major mapping: 2d arrays are mapped linearly by their columns.
+        
+            - Address(A[i][j]) = Lo + [j * m + i] * w
+            
+
+
+    
+- in compile time, when an address of element in array needs to be referred to: 
+    - Address(A[i]) = Lo + i * w
+        - Lo = base address (address of first element) 
+        - i =  index
+        - w = size of data type
+
+
 
     
