@@ -112,15 +112,148 @@ int binary_search(Array arr, int key, int first = -1, int last = -1)
     
 };
 
+int get(Array arr, int index)
+{
+    if(index >=0 && index < arr.length)
+    {
+        return arr.A[index];
+    }
+    return -1;
+
+};
+
+void replace(Array *arr, int index, int val)
+{
+    if(index >=0 && index < arr->length)
+    {
+        arr->A[index] = val;
+    }
+};
+
+int max(Array arr)
+{
+    int max = 0;
+
+    for (size_t i = 0; i < arr.length; i++)
+    {
+        if (arr.A[i] > max)
+        {
+            max = arr.A[i];
+        }
+    }
+    
+    return max;
+};
+
+int min(Array arr)
+{
+    int min = arr.A[0];
+
+    for (size_t i = 0; i < arr.length; i++)
+    {
+        if (arr.A[i] < min)
+        {
+            min = arr.A[i];
+        }
+    }
+    
+    return min;
+};
+
+int sum(Array arr)
+{
+    int sum = 0;
+
+    for (size_t i = 0; i < arr.length; i++)
+    {
+        
+        sum += arr.A[i];
+        
+    }
+    
+    return sum;
+}
+
+double average(Array arr)
+{
+    return sum(arr) / static_cast <double> (arr.length);
+}
+
+// reverses array in place
+void reverse(Array *arr)
+{
+    int temp;
+
+    for (size_t i = 0; i < arr->length / 2; ++i)
+    {
+        temp = arr->A[arr->length - i - 1];
+        arr->A[arr->length - i - 1] = arr->A[i];
+        arr->A[i] = temp;
+    }
+
+};
+
+// removes first elements
+void shift(Array &arr)
+{
+    remove_element(&arr, 0);
+};
+
+void rotate_left(Array *arr)
+{
+    int arr2[arr->length];
+
+    for (size_t i = 0; i < arr->length; i++)
+    {
+        arr2[(i - 1) % arr->length] = arr->A[i];
+    }
+    
+    for (size_t i = 0; i < arr->length; i++)
+    {
+        arr->A[i] = arr2[i];
+    }
+
+};
+
+void rotate_right(Array *arr)
+{
+    int arr2[arr->length];
+
+    for (size_t i = 0; i < arr->length; i++)
+    {
+        arr2[(i + 1) % arr->length] = arr->A[i];
+    }
+    
+    for (size_t i = 0; i < arr->length; i++)
+    {
+        arr->A[i] = arr2[i];
+    }
+}
+
+bool is_sorted(Array arr)
+{
+    for (size_t i = 0; i < arr.length - 1; i++)
+    {
+        if(arr.A[i] > arr.A[i + 1])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+
 int main()
 {
     
-    Array arr = {{2,5,8,11,16,20,31,70}, 10, 8};
+    Array arr = {{1,2,3,4,5,6,7,8,9}, 10, 9};
 
-    // print_arr(arr);
+    cout << is_sorted(arr) << endl;
 
-    cout << linear_search(arr, 20) << endl;
-    cout << binary_search(arr, 20) << endl;
+
+
+
+
 
 
 }
