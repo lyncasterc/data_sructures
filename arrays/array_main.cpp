@@ -9,7 +9,7 @@ using namespace std;
 
 struct Array
 {
-    int A[10]; // points to array in heap
+    int A[30]; // points to array in heap
     int size; //size of array
     int length; // # of elements in array
 
@@ -30,7 +30,7 @@ void push(Array *arr, int val)
 {
     arr->A[arr->length] = val; 
     arr->length++;
-}
+};
 
 // inserts element at given index of array 
 void insert(Array *arr, int index, int val)
@@ -240,20 +240,125 @@ bool is_sorted(Array arr)
         }
     }
     return true;
-}
+};
+
+Array* merge(Array arr1, Array arr2)
+{   
+    int i = 0, j = 0 , k = 0;
+    Array *arr3 = new Array;
+
+    while (i < arr1.length && j < arr2.length)
+    {
+        if (arr1.A[i] < arr2.A[j])
+        {
+            arr3->A[k++] = arr1.A[i++];
+        }
+        else
+        {
+            arr3->A[k++] = arr2.A[j++];
+            
+        }
+        
+    }
+
+    while (i < arr1.length)
+    {
+        arr3->A[k++] = arr1.A[i++];
+    }
+
+    while (j < arr2.length)
+    {
+        arr3->A[k++] = arr2.A[j++];
+    }
+    
+    arr3->length = arr1.length + arr2.length;
+    arr3->size = 30;
+    
+    return arr3;
+};
+
+Array* set_union(Array arr1, Array arr2)
+{
+    Array *arr3 = new Array;
+
+    int i = 0, k = arr1.length;
+
+    for (size_t i = 0; i < arr1.length; i++)
+    {
+        arr3->A[i] = arr1.A[i];
+    }
+
+    while (i < arr2.length)
+    {
+        if (linear_search(arr1, arr2.A[i]) == -1)
+        {
+            arr3->A[k++] = arr2.A[i];
+        }
+        i++;
+    }
+    
+    arr3->length = k;
+    arr3->size = 30;
+
+    return arr3;
+
+};
+
+Array * set_difference(Array arr1, Array arr2)
+{
+    Array *arr3 = new Array;
+    int k = 0;
+    for (size_t i = 0; i < arr1.length; i++)
+    {
+        int result = linear_search(arr2, arr1.A[i]);
+
+        if ( result == -1 )
+        {
+            arr3->A[k++] = arr1.A[i];
+        }
+        
+    }
+    
+    arr3->length = k;
+    arr3->size = 30;
+
+    return arr3;
+
+};
+
+Array * set_intersection(Array arr1, Array arr2)
+{
+    Array *arr3 = new Array;
+
+    int k = 0;
+
+    for (size_t i = 0; i < arr1.length; i++)
+    {
+        if ( linear_search(arr2, arr1.A[i]) != -1 )
+        {
+            arr3->A[k++] = arr1.A[i];
+        }
+    }
+    
+    arr3->length = k;
+    arr3->size = 30;
+
+    return arr3;
+};
 
 
 int main()
 {
     
-    Array arr = {{1,2,3,4,5,6,7,8,9}, 10, 9};
+    Array arr1 = {{2,6,10,15,25}, 30, 5};
+    Array arr2 = {{3,6,7,15,20}, 30, 5};
+    Array *arr3;
 
-    cout << is_sorted(arr) << endl;
+    arr3 = set_difference(arr1, arr2);
 
+    print_arr(*arr3);
 
-
-
-
+    
 
 
 }
