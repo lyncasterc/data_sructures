@@ -6,19 +6,23 @@
 #include <algorithm>
 #include "DiagonalMatrix.h"
 #include "LowerTriangularMatrix.h"
+#include "./sparse_matrix/SparseMatrix.h"
 
 using namespace std;
 
 int main()
 {
-    DiagonalMatrix boop(5);
-    boop.set(1,1,3);
-    boop.set(2,2,7);
-    boop.set(3,3,4);
-    boop.set(4,4,9);
-    boop.set(5,5,6);
+    DiagonalMatrix matrix(5);
+    matrix.set(1,1,3);
+    matrix.set(2,2,7);
+    matrix.set(3,3,4);
+    matrix.set(4,4,9);
+    matrix.set(5,5,6);
 
-    boop.display();
+    // matrix.display();
 
+    SparseMatrix matrix2(4,5,5);
+    cin >> matrix2;
+    cout << matrix2;
 
 };
