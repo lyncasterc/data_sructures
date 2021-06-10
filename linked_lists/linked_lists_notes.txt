@@ -1,0 +1,17 @@
+Recurssive LinkedList functions:
+
+int length(Node *node)
+{
+    if(!node)
+    { return 0; }
+    else
+    { return length(node->next_node) + 1; }
+}
+
+int sum(Node *node)
+{
+    if(!node)
+    { return 0; }
+
+    return sum(node->next_node) + node->value;
+}

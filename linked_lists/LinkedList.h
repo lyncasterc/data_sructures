@@ -40,6 +40,49 @@ class LinkedList
             }
         };
 
+        int length()
+        {
+            if (!head)
+            { return 0; }
+
+            Node *node = head;
+            int count = 1;
+
+            while(node->next_node)
+            {
+                count++;
+                node = node->next_node;
+            }
+
+            return count;
+
+        }
+
+        int sum()
+        {
+            if(!head)
+            { return 0; }
+
+            Node *node = head;
+            int result = 0;
+
+            while(node->next_node)
+            {
+                result += node->value;
+                node = node->next_node;
+                
+                if(!node->next_node)
+                {
+                    result += node->value;
+
+                }
+            }
+            
+            return result;
+
+            
+        };
+
         void display()
         {
             Node *node = head;
