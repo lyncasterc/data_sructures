@@ -12,13 +12,15 @@ int main()
     int arr2[] = {4,3,2};
 
     LinkedList list(arr, 6);
-    LinkedList list2;
+    int len = list.length();
 
+    LinkedList list2;
     list2.initialize(arr2,3);
 
     list.display();
-    list2.display();
+    cout << endl;
+    list.sorted_insert(4);
+    list.display();
 
-    cout << list.sum() << endl;
-    cout << list2.sum() << endl;
+    // cout << list.unshift(69) << endl;
 }
