@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Node.h"
 #include "LinkedList.h"
+#include "CircLinkedList.h"
 
 using namespace std;
 
@@ -12,18 +13,12 @@ int main()
     int arr2[] = {4,3,2};
 
     LinkedList list(arr, 6);
-    int len = list.length();
 
-    LinkedList list2;
-    list2.initialize(arr2,3);
+    CircLinkedList circ_list(arr,6);
 
-    list.display();
-    cout << endl;
-
-    list.concat(list2);
-
-    list.display();
-    cout << endl;
+    circ_list.display();
+    
+    
     
     
 }

@@ -117,6 +117,27 @@ class LinkedList
             
         }
 
+        bool check_loop()
+        {
+            Node *p;
+            Node *q;
+            p = q = head;
+
+            while(p && q)
+            {
+                p = p->next_node;
+                q = q->next_node->next_node;
+
+                if(p == q)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        
+
         void reverse()
         {
             int index = length() - 1;
