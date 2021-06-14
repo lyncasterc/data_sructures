@@ -1,0 +1,34 @@
+Recurssive LinkedList functions:
+
+int length(Node *node)
+{
+    if(!node)
+    { return 0; }
+    else
+    { return length(node->next_node) + 1; }
+}
+
+int sum(Node *node)
+{
+    if(!node)
+    { return 0; }
+
+    return sum(node->next_node) + node->value;
+}
+
+Sliding pointers reverse function:
+
+void reverse()
+{
+    p = head;
+    q = NULL;
+    r = FULL;
+
+    while(p)
+    {
+        r = q;
+        q = p;
+        q->next_node = r;
+    }
+    head = q;
+}

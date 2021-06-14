@@ -90,6 +90,11 @@ class LinkedList
             }
         }
 
+        void concat(LinkedList list2)
+        {
+            tail()->next_node = list2.at(0);
+        }
+    
         void remove_at(int index)
         {
             Node *node;
