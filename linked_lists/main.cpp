@@ -17,9 +17,16 @@ int main()
     LinkedList list2;
     list2.initialize(arr2,3);
 
+    list2.display();
+    cout << endl;
+    
     list.display();
     cout << endl;
+
     list.reverse();
+    list2.reverse();
+    
     list.display();
+    list2.display();
 
 }

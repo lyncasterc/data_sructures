@@ -114,22 +114,24 @@ class LinkedList
 
         void reverse()
         {
-            int index = length() - 2;
-            int count;
+            int index = length() - 1;
+            int count, i;
             Node *node;
             Node *new_head = at(-1);
             Node *prev_node = new_head;
 
-
-            for (size_t i = index; i >= 0; i--)
+            for (i = index; i-- > 0;)
             {
                 node = head;
                 count = 0;
 
                 while(node)
                 {
-                    node = node->next_node;
-                    count++;
+                    if (i != 0)
+                    {
+                        node = node->next_node;
+                        count++;
+                    }
 
                     if(count == i)
                     {
@@ -138,6 +140,7 @@ class LinkedList
                         break;
                     }
                 }
+                
             }
             
             head->next_node = NULL;
