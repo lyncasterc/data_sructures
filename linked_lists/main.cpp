@@ -19,8 +19,7 @@ int main()
 
     list.display();
     cout << endl;
-    list.sorted_insert(4);
+    list.reverse();
     list.display();
 
-    // cout << list.unshift(69) << endl;
 }

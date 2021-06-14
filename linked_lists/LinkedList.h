@@ -55,7 +55,94 @@ class LinkedList
             }
 
             return count;
+        }
 
+        void shift()
+        {
+            Node *node = head;
+            if(!head->next_node)
+            {
+                head = NULL;
+                delete node;
+
+            }
+            else
+            {
+                head = head->next_node;
+                delete node;
+            }
+        }
+
+        void pop()
+        {
+            Node *node;
+            if(!head->next_node)
+            {
+                node = head;
+                head = NULL;
+                delete node;
+            }
+            else
+            {
+                node = at(-1);
+                at(-2)->next_node = NULL;
+                delete node;
+            }
+        }
+
+        void remove_at(int index)
+        {
+            Node *node;
+            int len = length();
+            index = (index % len+ len) % len;
+
+            if (index == 0)
+            { shift(); }
+
+            else if (index == len - 1)
+            { pop(); }
+
+            else
+            { 
+                node = at(index);
+                at(index - 1)->next_node = at(index + 1); 
+                delete node;
+            }
+
+            
+        }
+
+        void reverse()
+        {
+            int index = length() - 2;
+            int count;
+            Node *node;
+            Node *new_head = at(-1);
+            Node *prev_node = new_head;
+
+
+            for (size_t i = index; i >= 0; i--)
+            {
+                node = head;
+                count = 0;
+
+                while(node)
+                {
+                    node = node->next_node;
+                    count++;
+
+                    if(count == i)
+                    {
+                        prev_node->next_node = node;
+                        prev_node = prev_node->next_node;
+                        break;
+                    }
+                }
+            }
+            
+            head->next_node = NULL;
+            head = new_head;
+            
         }
 
         void unshift(int value)
@@ -224,31 +311,17 @@ class LinkedList
         {
             Node *node = head;
 
+            while(node)
+            {
+                cout << "( " << node->value << " )" << " -> ";
+                node = node->next_node;
+            }
+
             if(!node)
             {
                 cout << "NULL" << endl;
             }
-
-            while(node->next_node)
-            {
-                cout << "( " << node->value << " )" << " -> ";
-                node = node->next_node;
-
-                if (!node->next_node)
-                {
-                    cout << "( " << node->value << " )" << " ->  NULL" << endl;
-                }
-                
-            }
         }
-
-
-
-
-
-
-
-
 
 };
 
