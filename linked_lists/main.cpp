@@ -14,10 +14,11 @@ int main()
 
     DoubleLinkedList list(arr,6);
 
-    list.insert_at(2, 69);
+    list.shift();
+    list.shift();
     list.display();
+    cout << list.length() << endl;
     
-    cout << list.tail()->value << endl;
     
 
 

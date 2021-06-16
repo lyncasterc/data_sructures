@@ -100,6 +100,14 @@ class DoubleLinkedList
             return tail;
         }
 
+        void shift()
+        {
+            Node2 *node = head;
+            head->next_node->prev_node = NULL;
+            head = head->next_node;
+            delete node;
+        }
+
         void unshift(int value)
         {
             if(!head)
