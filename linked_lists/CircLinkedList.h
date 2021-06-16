@@ -38,15 +38,38 @@ class CircLinkedList
             int count = 0;
             prev_node = head;
 
-            for (size_t i = 0; i < index - 1; i++)
-            { prev_node = prev_node->next_node; }
-            
             node = new Node;
             node->value = value;
 
-            node->next_node = prev_node->next_node;
-            prev_node->next_node = node;
+            if(index == 0)
+            {
+                node->next_node = head;
+                last()->next_node = node;
+                head = node;
+            }
+            else
+            {
+                for (size_t i = 0; i < index - 1; i++)
+                { prev_node = prev_node->next_node; }
 
+                node->next_node = prev_node->next_node;
+                prev_node->next_node = node;
+            }
+
+            
+
+        }
+
+        Node *last()
+        {
+            Node *node = head;
+
+            do
+            {
+                node = node->next_node;
+            } while (node->next_node != head);
+
+            return node;
         }
 
         bool check_loop()
