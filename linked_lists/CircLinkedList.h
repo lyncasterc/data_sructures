@@ -62,7 +62,23 @@ class CircLinkedList
 
         void remove_at(int index)
         {
+            
+            Node *node;
+            int len = length();
+            index = (index % len+ len) % len;
 
+            if (index == 0)
+            { shift(); }
+
+            else if (index == len - 1)
+            { pop(); }
+
+            else
+            { 
+                node = at(index);
+                at(index - 1)->next_node = at(index + 1); 
+                delete node;
+            }
         }
 
         void shift()

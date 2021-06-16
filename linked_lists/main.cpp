@@ -14,11 +14,10 @@ int main()
 
     CircLinkedList circ_list(arr,6);
 
-    circ_list.pop();
+    circ_list.remove_at(2);
 
     circ_list.display();
 
-    cout << circ_list.is_circular() << endl;
 
     
     
