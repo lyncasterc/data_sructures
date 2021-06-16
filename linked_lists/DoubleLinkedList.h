@@ -117,6 +117,24 @@ class DoubleLinkedList
             
         }
 
+        void pop()
+        {
+            Node2 *node;
+
+            if(!head->next_node)
+            {
+                node = head;
+                head = NULL;
+                delete node;
+            }
+            else
+            {
+                node = tail();
+                at(-2)->next_node = NULL;
+                delete node;
+            }
+        }
+
         void unshift(int value)
         {
             if(!head)
