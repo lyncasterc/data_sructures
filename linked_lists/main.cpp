@@ -16,6 +16,8 @@ int main()
 
     list.display();
     
+    cout << list.length() << endl;
+    
 
 
 

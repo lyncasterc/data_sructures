@@ -39,6 +39,23 @@ class DoubleLinkedList
             
         };
 
+        int length()
+        {
+            if (!head)
+            { return 0; }
+
+            Node2 *node = head;
+            int count = 1;
+
+            while(node->next_node)
+            {
+                count++;
+                node = node->next_node;
+            }
+
+            return count;
+        }
+
         void display()
         {
             Node2 *node = head;
