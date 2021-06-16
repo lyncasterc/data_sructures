@@ -39,7 +39,24 @@ class DoubleLinkedList
             
         };
 
-        
+        void display()
+        {
+            Node2 *node = head;
+
+            while(node)
+            {
+
+                cout << "( " << node->value << ") <- -> ";
+                node = node->next_node;
+                
+            }
+
+            if(!node)
+            {
+                cout << " NULL " << endl;
+            }
+
+        }
 
 };
 
