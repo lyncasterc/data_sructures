@@ -60,14 +60,6 @@ class CircLinkedList
 
         }
 
-        void remove_at(int index)
-        {
-            if(index == 0)
-            {
-
-            }
-        }
-
         void shift()
         {
             Node *node = head;
