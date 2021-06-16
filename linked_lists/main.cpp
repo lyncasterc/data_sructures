@@ -14,6 +14,7 @@ int main()
 
     DoubleLinkedList list(arr,6);
 
+    
     list.display();
     
     cout << list.length() << endl;
