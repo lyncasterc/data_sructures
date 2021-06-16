@@ -77,6 +77,29 @@ class CircLinkedList
             }
         }     
 
+
+
+        int length()
+        {
+            int count = 0;
+            Node *node = head;
+
+            if(!node)
+            { return 0; }
+
+            else
+            {
+                do
+                {
+                    count++;
+                    node = node->next_node;
+                } while (node != head);
+
+            }
+    
+            return count;
+        }
+
         Node *last()
         {
             Node *node = head;

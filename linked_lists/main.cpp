@@ -12,19 +12,14 @@ int main()
     int arr[] = {1,2,3,4,5,6};
     int arr2[] = {4,3,2};
 
-    LinkedList list(arr, 6);
-
     CircLinkedList circ_list(arr,6);
 
     circ_list.display();
 
-    circ_list.insert_at(1, 69);
+    cout << circ_list.length() << endl;
     
-    circ_list.display();
 
-    circ_list.shift();
 
-    circ_list.display();
 
 
 
