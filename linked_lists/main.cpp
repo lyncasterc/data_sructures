@@ -14,10 +14,10 @@ int main()
 
     DoubleLinkedList list(arr,6);
 
-    
+    list.push(69);
     list.display();
     
-    cout << list.length() << endl;
+    cout << list.tail()->value << endl;
     
 
 

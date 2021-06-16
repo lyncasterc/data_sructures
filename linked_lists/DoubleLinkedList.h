@@ -23,6 +23,34 @@ class DoubleLinkedList
             initialize(arr, n);
         }
 
+        void push(int value)
+        {   
+            if(!head)
+            {
+                head = new Node2;
+                head->value = value;
+            }
+            else
+            {
+                Node2 *node = new Node2;
+                node->value = value;
+                tail()->next_node = node;
+                node->prev_node = tail();
+
+            }
+        }
+
+        Node2 *tail()
+        {
+            Node2 *tail = head;
+            
+            while(tail->next_node)
+            {
+                tail = tail->next_node;
+            }
+            
+            return tail;
+        }
 
         void unshift(int value)
         {
