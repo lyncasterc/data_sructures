@@ -14,9 +14,13 @@ int main()
 
     CircLinkedList circ_list(arr,6);
 
+    circ_list.pop();
+
     circ_list.display();
 
-    cout << circ_list.length() << endl;
+    cout << circ_list.check_loop() << endl;
+
+    
     
 
 
