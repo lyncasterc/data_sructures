@@ -60,6 +60,11 @@ class CircLinkedList
 
         }
 
+        void remove_at(int index)
+        {
+
+        }
+
         void shift()
         {
             Node *node = head;
@@ -151,7 +156,7 @@ class CircLinkedList
             return node;
         }
 
-        bool check_loop()
+        bool is_circular()
             {
                 Node *p;
                 Node *q;

@@ -18,7 +18,7 @@ int main()
 
     circ_list.display();
 
-    cout << circ_list.check_loop() << endl;
+    cout << circ_list.is_circular() << endl;
 
     
     
