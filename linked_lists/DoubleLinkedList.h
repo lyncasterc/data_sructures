@@ -103,9 +103,18 @@ class DoubleLinkedList
         void shift()
         {
             Node2 *node = head;
-            head->next_node->prev_node = NULL;
-            head = head->next_node;
-            delete node;
+            if(!head->next_node)
+            {
+                head = NULL;
+                delete node;
+            }
+            else
+            {
+                head->next_node->prev_node = NULL;
+                head = head->next_node;
+                delete node;
+            }
+            
         }
 
         void unshift(int value)
