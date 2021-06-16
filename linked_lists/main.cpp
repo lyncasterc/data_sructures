@@ -22,6 +22,11 @@ int main()
     
     circ_list.display();
 
+    circ_list.shift();
+
+    circ_list.display();
+
+
 
     
     
