@@ -134,9 +134,7 @@ class LinkedList
                 }
             }
             return false;
-        }
-
-        
+        };
 
         void reverse()
         {

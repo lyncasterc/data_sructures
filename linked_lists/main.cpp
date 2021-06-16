@@ -17,6 +17,12 @@ int main()
     CircLinkedList circ_list(arr,6);
 
     circ_list.display();
+
+    circ_list.insert_at(1, 69);
+    
+    circ_list.display();
+
+
     
     
     

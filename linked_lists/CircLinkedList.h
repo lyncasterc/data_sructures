@@ -32,6 +32,23 @@ class CircLinkedList
                 tail->next_node = head;
             };
 
+        void insert_at(int index, int value)
+        {
+            Node *prev_node, *node;
+            int count = 0;
+            prev_node = head;
+
+            for (size_t i = 0; i < index - 1; i++)
+            { prev_node = prev_node->next_node; }
+            
+            node = new Node;
+            node->value = value;
+
+            node->next_node = prev_node->next_node;
+            prev_node->next_node = node;
+
+        }
+
         bool check_loop()
             {
                 Node *p;
@@ -72,8 +89,6 @@ class CircLinkedList
             } while (node != head);
             
         }
-
-    
 
 };
 
