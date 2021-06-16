@@ -68,6 +68,32 @@ class DoubleLinkedList
             }
         }
 
+        void remove_at(int index)
+        {
+            int len = length();
+            index = (index % len + len) % len;
+
+            if(index == 0)
+            {
+                shift();
+            }
+            else if(index == len - 1)
+            {
+                pop();
+            }
+            else
+            {
+                Node2 *index_node = at(index);
+                Node2 *prev = at(index - 1);
+                Node2 *next = at(index + 1);
+
+                prev->next_node = next;
+                next->prev_node = prev;
+                delete index_node;
+
+            }
+        }
+
         Node2* at(int index)
         {
 
