@@ -40,6 +40,54 @@ class DoubleLinkedList
             }
         }
 
+        void insert_at(int index, int value)
+        {
+            int len = length();
+            index = (index % len +len) % len;
+
+            if(index == 0)
+            {
+                unshift(value);
+            }
+            else if (index == len - 1)
+            {
+                push(value);
+            }
+            else
+            {
+                Node2 *node = new Node2;
+                node->value = value;
+                Node2 *index_node = at(index);
+
+                index_node->prev_node->next_node = node;
+                node->next_node = index_node;
+                node->prev_node = index_node->prev_node;
+                node->next_node = index_node;
+                index_node->prev_node = node;
+
+            }
+        }
+
+        Node2* at(int index)
+        {
+
+            int count = 0;
+            Node2 *node = head;
+            int len = length();
+            
+            while(node)
+            {
+                if(count == ((index % len + len) % len))
+                { return node; }
+
+                node = node->next_node;
+                count++;
+            }
+
+            return NULL;
+            
+        }
+
         Node2 *tail()
         {
             Node2 *tail = head;

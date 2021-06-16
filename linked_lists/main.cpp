@@ -14,7 +14,7 @@ int main()
 
     DoubleLinkedList list(arr,6);
 
-    list.push(69);
+    list.insert_at(2, 69);
     list.display();
     
     cout << list.tail()->value << endl;
