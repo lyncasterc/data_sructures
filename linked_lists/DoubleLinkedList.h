@@ -212,6 +212,27 @@ class DoubleLinkedList
             return count;
         }
 
+        void reverse()
+        {
+            Node2 *node = head;
+            Node2 *new_head = tail();
+            Node2 *temp;
+
+            while (node)
+            {
+                temp = node->next_node;
+
+                node->next_node = node->prev_node;
+                
+                node->prev_node = temp;
+
+                node = node->prev_node;
+            }
+
+            head = new_head;
+            
+        }
+
         void display()
         {
             Node2 *node = head;

@@ -14,7 +14,7 @@ int main()
 
     DoubleLinkedList list(arr,6);
 
-    list.remove_at(1);
+    list.reverse();
     list.display();
     cout << list.length() << endl;
     
