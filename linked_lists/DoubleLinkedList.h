@@ -158,7 +158,7 @@ class DoubleLinkedList
             while(node)
             {
 
-                cout << "( " << node->value << ") <- -> ";
+                cout << "( " << node->value << " ) <- -> ";
                 node = node->next_node;
                 
             }
