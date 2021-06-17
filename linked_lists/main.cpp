@@ -10,13 +10,12 @@ using namespace std;
 
 int main()
 {
-    int arr[] = {1,2,3,4,5,6};
+    int arr[] = {1,2,3,4,5};
+    DoubleLinkedList list(arr,5);
+    int len = list.length();
 
-    DoubleLinkedList list(arr,6);
-
-    list.reverse();
     list.display();
-    cout << list.length() << endl;
+    cout << list.at(len / 2)->value << endl;
     
     
 
