@@ -29,9 +29,9 @@ class ArrayStack
         {
             if(top != -1)
             {
-                for (size_t i = 0; i <= top; i++)
+                for (int i = top + 1; i-- > 0; )
                 {
-                    cout << arr[i] << " " << endl;
+                    cout << arr[i] << endl << endl;
                 }
                 
             }
