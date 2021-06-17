@@ -1,0 +1,33 @@
+Stack:
+    - collection of elements following LIFO (last in, first out).
+    -ex: 6-5-4-3-2-1 
+        - 6 was inserted last, but will be first to come out.
+    
+    - can be visualized as being vertical, like a stack of books.
+    
+    - stack as an ADT:
+        - space for storing elements
+        - pointer for top most elements
+
+        - operations:
+            - pop(val)
+            - push()
+            - peek(index) ->looking at value
+            - stack_top() -> looking at top value
+            - is_empty
+            - is_full
+    
+- Implementation:
+    - array:
+        - need fixed size array
+        - size of array 
+        - pointer to recently inserted element
+        
+        0   1   2  3  4 
+        [10, 15, 7,  ,  ] <-- insert this side
+                 ^top
+
+        - when stack is empty, top pointer is -1
+        
+        - when full, top pointer is size - 1
+    
