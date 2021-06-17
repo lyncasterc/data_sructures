@@ -22,7 +22,16 @@ class ArrayStack
 
         void push(int val)
         {
-            arr[++top] = val;
+            if(!is_full())
+            { arr[++top] = val; }
+        }
+
+        bool is_full()
+        {
+            if(top == size - 1)
+            { return true; }
+
+            return false;
         }
 
         int stack_top()
