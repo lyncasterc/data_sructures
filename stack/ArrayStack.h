@@ -25,6 +25,14 @@ class ArrayStack
             arr[++top] = val;
         }
 
+        int stack_top()
+        {
+            if(top != -1)
+            { return arr[top]; }
+            
+            return NULL;
+        }
+
         void display()
         {
             if(top != -1)

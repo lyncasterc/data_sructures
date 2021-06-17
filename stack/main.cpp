@@ -13,6 +13,8 @@ int main()
     s.push(2);
     s.push(3);
     s.display();
+
+    cout << s.stack_top() << endl;
     
     
     
