@@ -24,6 +24,8 @@ class ArrayStack
         {
             if(!is_full())
             { arr[++top] = val; }
+            else
+            { cout << "Stack overflow" << endl;}
         }
 
         bool is_full()
