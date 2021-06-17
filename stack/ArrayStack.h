@@ -19,6 +19,12 @@ class ArrayStack
             arr = new int[size];
             top = -1;
         }
+
+        void push(int val)
+        {
+            arr[++top] = val;
+        }
+
         ~ArrayStack()
         { delete [] arr; }
 };
