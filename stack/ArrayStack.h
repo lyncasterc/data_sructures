@@ -25,6 +25,18 @@ class ArrayStack
             arr[++top] = val;
         }
 
+        void display()
+        {
+            if(top != -1)
+            {
+                for (size_t i = 0; i <= top; i++)
+                {
+                    cout << arr[i] << " " << endl;
+                }
+                
+            }
+        }
+
         ~ArrayStack()
         { delete [] arr; }
 };
