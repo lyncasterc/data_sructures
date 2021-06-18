@@ -28,6 +28,14 @@ class ArrayStack
             { cout << "Stack overflow" << endl;}
         }
 
+
+        bool is_empty()
+        {
+            if(top == -1)
+            { return true; }
+            return false;
+        }
+
         bool is_full()
         {
             if(top == size - 1)
@@ -38,7 +46,7 @@ class ArrayStack
 
         int stack_top()
         {
-            if(top != -1)
+            if(!is_empty())
             { return arr[top]; }
             
             return NULL;
