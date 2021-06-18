@@ -11,6 +11,10 @@ int main()
     ArrayStack s(5);
     ListStack s2;
 
+    s2.push(6);
+    s2.push(7);
+
+    s2.display();
 
     
 

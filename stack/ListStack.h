@@ -58,6 +58,19 @@ class ListStack
             return false;
         }
 
+        void display()
+        {
+            if(!is_empty())
+            {
+                Node *node = top;
+
+                while(node)
+                {
+                    cout << node->data << endl;
+                    node = node->next;
+                }
+            }
+        }
 
 
 
