@@ -8,15 +8,18 @@ using namespace std;
 int main()
 {
     ArrayStack s(5);
-    int x = 10;
 
     s.push(1);
     s.push(2);
     s.push(3);
-    s.push(3);
-    s.push(3);
-    s.push(3);
     s.display();
+    cout << endl << endl;
+    
+    s.pop();
+    s.pop();
+    s.pop();
+    s.display();
+
 
     
     

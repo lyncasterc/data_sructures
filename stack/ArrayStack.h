@@ -28,6 +28,17 @@ class ArrayStack
             { cout << "Stack overflow" << endl;}
         }
 
+        int pop()
+        {
+            int value = -1;
+
+            if(is_empty())
+            { cout << "Stack underflow" << endl; }
+            else
+            { value = arr[top--]; }
+
+            return value;
+        }
 
         bool is_empty()
         {
