@@ -1,8 +1,8 @@
 #ifndef ListStack_H
 #define ListStack_H
 
-#include "../linked_lists/LinkedList.h"
 #include <iostream>
+#include "Node.h"
 
 using namespace std;
 
