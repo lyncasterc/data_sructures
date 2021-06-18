@@ -39,6 +39,33 @@ class ListStack
             
         }
 
+        int pop()
+        {
+            int value = -1;
+            
+            if(!is_empty())
+            {
+                Node *node = top;
+                value = node->data;
+
+                if(!top->next)
+                {   
+                    top = NULL;
+                }
+                else
+                {
+                    top = top->next;
+                }
+
+                delete node;
+            }
+            else
+            {
+                cout << "Stack underflow" << endl;
+            }
+            return value;
+        }
+
         bool is_empty()
         {
             if(!top)

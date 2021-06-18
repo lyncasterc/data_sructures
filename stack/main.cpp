@@ -13,8 +13,13 @@ int main()
 
     s2.push(6);
     s2.push(7);
+    s2.push(8);
 
     s2.display();
+
+    cout << endl << endl;
+
+    
 
     
 
