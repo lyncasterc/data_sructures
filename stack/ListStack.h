@@ -8,6 +8,49 @@ using namespace std;
 
 class ListStack
 {
+    private:
+        Node *top;
+    public:
+        ListStack()
+        { top = NULL; }
+
+        void push(int value)
+        {
+            if(!top)
+            {
+                top = new Node;
+                top->data = value;
+            }
+            else
+            {
+                Node *new_top = new Node;
+
+                new_top->data = value;
+                new_top->next = top;
+                top = new_top;
+            }
+        }
+
+        bool is_empty()
+        {
+            if(!top)
+            { return true; }
+
+            return false;
+        }
+
+        bool is_full()
+        {
+            Node *node = new Node;
+
+            if(!node)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
 
 };
 #endif
