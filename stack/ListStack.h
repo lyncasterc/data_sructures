@@ -16,19 +16,27 @@ class ListStack
 
         void push(int value)
         {
-            if(!top)
+            if(!is_full())
             {
-                top = new Node;
-                top->data = value;
+                if(is_empty())
+                {
+                    top = new Node;
+                    top->data = value;
+                }
+                else
+                {
+                    Node *new_top = new Node;
+
+                    new_top->data = value;
+                    new_top->next = top;
+                    top = new_top;
+                }
             }
             else
             {
-                Node *new_top = new Node;
-
-                new_top->data = value;
-                new_top->next = top;
-                top = new_top;
+                cout << "Stack overflow" << endl;
             }
+            
         }
 
         bool is_empty()
@@ -49,6 +57,7 @@ class ListStack
             }
             return false;
         }
+
 
 
 
