@@ -174,11 +174,20 @@ class LinkedList
 
         void unshift(int value)
         {
-            Node *new_head = new Node;
+            if(!head)
+            {
+                head = new Node;
+                head->value = value;
+            }
+            else
+            {
+                Node *new_head = new Node;
 
-            new_head->value = value;
-            new_head->next_node = head;
-            head = new_head;
+                new_head->value = value;
+                new_head->next_node = head;
+                head = new_head;
+            }
+            
         }
 
         Node* tail()
