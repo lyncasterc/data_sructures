@@ -1,6 +1,7 @@
 #include <array>
 #include <iostream>
 #include "ArrayStack.h"
+#include "ListStack.h"
 
 using namespace std;
 
