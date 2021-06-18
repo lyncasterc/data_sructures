@@ -15,7 +15,7 @@ int main()
     s.display();
     
     
-    cout << s.peek(2) << endl;
+    cout << s.peek(4) << endl;
 
     
 

@@ -60,9 +60,17 @@ class ArrayStack
             if(!is_empty())
             {
                 int len = top + 1, index;
-                index = (-pos % len + len) % len;
-                return arr[index];
+                if(len > top)
+                {
+                    cout << "Invalid position" << endl;
+                }
+                else
+                {
+                    index = (-pos % len + len) % len;
+                    return arr[index];
+                }
             }
+            
             return -1;
         }
 
