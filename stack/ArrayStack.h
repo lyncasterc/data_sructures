@@ -55,6 +55,17 @@ class ArrayStack
             return false;
         }
 
+        int peek(int pos)
+        {
+            if(!is_empty())
+            {
+                int len = top + 1, index;
+                index = (-pos % len + len) % len;
+                return arr[index];
+            }
+            return -1;
+        }
+
         int stack_top()
         {
             if(!is_empty())

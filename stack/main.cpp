@@ -13,13 +13,11 @@ int main()
     s.push(2);
     s.push(3);
     s.display();
-    cout << endl << endl;
     
-    s.pop();
-    s.pop();
-    s.pop();
-    s.display();
+    
+    cout << s.peek(2) << endl;
 
+    
 
     
     
