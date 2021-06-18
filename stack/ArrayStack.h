@@ -88,7 +88,7 @@ class ArrayStack
             {
                 for (int i = top + 1; i-- > 0; )
                 {
-                    cout << arr[i] << endl << endl;
+                    cout << arr[i] << endl;
                 }
                 
             }
