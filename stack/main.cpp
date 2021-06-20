@@ -19,7 +19,7 @@ int main()
 
     cout << endl << endl;
 
-    
+    cout << s2.peek(4) << endl;
 
     
 

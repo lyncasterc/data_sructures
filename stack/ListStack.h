@@ -85,6 +85,26 @@ class ListStack
             return false;
         }
 
+        int peek(int pos)
+        {
+            int count = 1;
+            int value = -1;
+            Node *node = top;
+
+            while(node)
+            {
+                if(count == pos)
+                {
+                    value = node->data;
+                    break;
+                }
+
+                node = node->next;
+                count++;
+            }
+            return value;
+        }
+
         void display()
         {
             if(!is_empty())
