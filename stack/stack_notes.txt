@@ -81,4 +81,16 @@ Stack:
                 - while top of stack has higher/equal precendence, pop and send to post fix
                 - else, push
         - pop out remaining objects and send to postfix
-     
+
+    -infix to postfix with assocciativity and paranthesis:
+
+        - scan expression one at a time:
+            - if operator, compare its precedence with stack top precedence
+                - if higher, push to stack, move to next character
+                
+                - if lower, pop stack top and send to postfix
+
+                - if equal (close and open brackets), pop 
+                    (will only be equal with close and open bracket)
+
+            - if operand, send to postfix, move to next character
