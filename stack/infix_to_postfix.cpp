@@ -117,7 +117,7 @@ int main()
     string str = "25*5+2-10";
     string str_2 = "((a+b)*c)-d^e^f";
 
-    // cout << solution(str) << endl;
+    cout << solution(str) << endl;
     cout << solution_2(str_2) << endl;
 
 }
