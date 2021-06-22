@@ -51,3 +51,34 @@ Stack:
 
     
     - program does not check if the paranthesis' are proper, only checks if they're balanced.
+
+- Infix to Postfix conversion:
+    - infix: a + b
+
+    - prefix: +ab
+
+    - postfix: ab+
+
+    - infix to postfix helps for solving expression in one scan
+
+    -ex: (a+b)* (c-d)
+        ab+cd-* <- postfix form
+        when operator encountered, perform on previous two operands
+
+    - stack method 1:
+        - scan expression.
+            - if operand, send to postfix
+            - if operator, check if stack is empty.
+                - if empty, push
+                - else compare precendences of operator in stack and scanned operator
+                    - if precedence of stack operator lower, then push
+                    - else, pop and sent to postfix 
+    
+    - stack method 2: (variables have higher precedence)
+        - scan expression:
+            - if stack is empty, push
+            - else:
+                - while top of stack has higher/equal precendence, pop and send to post fix
+                - else, push
+        - pop out remaining objects and send to postfix
+     
