@@ -23,7 +23,18 @@ class ArrayQueue
 
         void enqueue(int val)
         {
-            arr[++rear] = val;
+            if(!is_full())
+            {
+                arr[++rear] = val;
+            }
+        }
+
+        void dequeue()
+        {
+            if(!is_empty())
+            {
+                arr[++front] = NULL;
+            }
         }
 
         void display()
@@ -33,6 +44,37 @@ class ArrayQueue
                 cout << arr[i] << " ";
             }
             cout << endl;
+        }
+
+        int first()
+        {
+            if(!is_empty())
+            { return arr[front + 1]; }
+            return -1;
+            
+        }
+        int last()
+        {
+            if(!is_empty())
+            { return arr[rear]; }
+            return -1;
+
+        }
+
+        bool is_empty()
+        {
+            if (front == rear)
+            { return true; }
+
+            return false;
+        }
+
+        bool is_full()
+        {
+            if(rear == size -1)
+            { return true; }
+
+            return false;
         }
 };
 

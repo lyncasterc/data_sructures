@@ -12,4 +12,7 @@ int main()
     q.enqueue(7);
 
     q.display();
+
+    cout << q.first() <<endl;
+    cout << q.last() <<endl;
 }
