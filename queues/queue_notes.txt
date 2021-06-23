@@ -53,3 +53,9 @@
                 - solution: circular queue
                     - when rear is size -1, and front is not 0, you can set rear to 0 and insert
 
+            - linked list:
+                - empty when front is null
+                - no limit, so full when new node can not be created (heap is full)
+                - inserting when front is null:
+                    make front = new node and point rear on front.
+
