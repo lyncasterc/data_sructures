@@ -42,3 +42,14 @@
 
             - when rear == size - 1, queue is full
 
+            - drawbacks:
+                - when rear is at size - 1 and there is only one element in the queue, you can't insert more even if the queue is nearly empty (meaning every location can only be used once)
+
+                - when queue is empty, you can't insert because rear is size - 1. when its empty, it's also "full"
+
+                - solution: reset pointers back to -1. 
+                    - still doesnt guarantee spaces will be used
+
+                - solution: circular queue
+                    - when rear is size -1, and front is not 0, you can set rear to 0 and insert
+

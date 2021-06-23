@@ -25,7 +25,8 @@ class ArrayQueue
         {
             if(!is_full())
             {
-                arr[++rear] = val;
+                rear = (rear + 1) % size;
+                arr[rear] = val;
             }
         }
 
@@ -33,7 +34,8 @@ class ArrayQueue
         {
             if(!is_empty())
             {
-                arr[++front] = NULL;
+                front = (front + 1) % size;
+                arr[front] = NULL;
             }
         }
 
@@ -53,6 +55,7 @@ class ArrayQueue
             return -1;
             
         }
+
         int last()
         {
             if(!is_empty())
@@ -71,7 +74,7 @@ class ArrayQueue
 
         bool is_full()
         {
-            if(rear == size -1)
+            if((rear + 1) % size == front) 
             { return true; }
 
             return false;
