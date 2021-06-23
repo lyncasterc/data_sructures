@@ -36,6 +36,24 @@ class ListQueue
             }
         }
 
+        int  dequeue()
+        {
+            int value = -1;
+            if(!is_empty())
+            {
+                Node *node = front;
+                value = node->value;
+                front = front->next_node;
+                delete node;
+            }
+            else
+            {
+                cout << "Queue is empty" << endl;
+            }
+            return value;
+            
+        }
+
         bool is_empty()
         {
             if(!front)

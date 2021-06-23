@@ -15,6 +15,8 @@ int main()
     q2.enqueue(6);
     q2.enqueue(7);
 
+    q2.dequeue();
+    
     q2.display();
 
 
