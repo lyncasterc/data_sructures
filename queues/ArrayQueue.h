@@ -7,7 +7,7 @@ using namespace std;
 
 class ArrayQueue
 {
-    private:
+    protected:
         int front;
         int rear;
         int size;
