@@ -1,18 +1,21 @@
 #include <iostream>
 #include <array>
 #include "ArrayQueue.h"
+#include "ListQueue.h"
 
 using namespace std;
 
 int main()
 {
     ArrayQueue q(10);
-    q.enqueue(5);
-    q.enqueue(6);
-    q.enqueue(7);
+    ListQueue q2;
 
-    q.display();
+    
+    q2.enqueue(5);
+    q2.enqueue(6);
+    q2.enqueue(7);
 
-    cout << q.first() <<endl;
-    cout << q.last() <<endl;
+    q2.display();
+
+
 }
