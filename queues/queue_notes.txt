@@ -1,0 +1,44 @@
+- Queue: 
+    - works on FIFO, first in first out.
+    
+    - two ends, front and rear
+    
+    - insertion happens at the rear
+     [1,2,3, ] <- insert here, pushing
+    
+    - deletion happens at front (1 was first to enter, 1 is first to come out), shifting
+     delete from here  -> [2,3, ]
+
+    - ADT: 
+        - space
+        - front pointer
+        - rear pointer
+
+        - operations:
+            - enqueue(x) -> insertion at rear, push
+            - dequeue() -> deletion at front, shifting
+            - is_empty()
+            - is_full()
+            - first()
+            - last()
+
+        - can be implemented with arrays or linked lists.
+
+        - array with rear pointer:
+            - rear starts at -1
+            - insertions takes constant O(1)
+            - deletions take O(n) because all elements need to be shifted backwards
+
+        - array with front and rear pointer:
+            - front and rear start at -1
+
+            - insertions takes constant O(1). rear moves forward by 1 each time
+
+            - deletions take O(1). instead of shifting elements backwards, just move front pointer forward and delete.
+
+            - rear points on last element, front points before first element
+
+            - when front == rear, Queue is empty
+
+            - when rear == size - 1, queue is full
+
