@@ -18,7 +18,7 @@ class ArrayQueue
         {
             this->size = size;
             arr = new int[size];
-            front = rear = -1;
+            front = rear = 0;
         }
 
         void enqueue(int val)

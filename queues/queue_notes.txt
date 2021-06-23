@@ -59,3 +59,20 @@
                 - inserting when front is null:
                     make front = new node and point rear on front.
 
+- Double ended queue (array):
+    - front and rear can both be used for inserting or deleting.
+    
+    - inserting from rear: same as before. pre-increment and insert
+    - deleting from rear: post-decrement and set null;
+    - deleting from front: normal method (with wrap around)
+    - inserting from front: insert at front and go backwards. cant insert when first is -1.
+
+    - input restricted doubled ended queue:
+        - can not insert from front, but can delete
+        - can insert and delete from rear
+    
+    - output restricted doubled ended queue:
+        - can insert and delete from front
+        - can insert from rear, but not delete
+ 
+
