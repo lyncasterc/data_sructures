@@ -30,10 +30,10 @@ class Queue
             front = rear = -1;
         }
 
-        void enqueue(Item value)
+        void enqueue(Item ele)
         {
             if(!is_full())
-            { arr[++rear] = value;  }
+            { arr[++rear] = ele;  }
         }
 
         void dequeue()
@@ -56,6 +56,13 @@ class Queue
             return false;
         }
 
+        int first()
+        {
+            if(!is_empty())
+            {
+                return arr[front + 1].value;
+            }
+        }
 };
 
 class PriorityQueue
@@ -79,28 +86,59 @@ class PriorityQueue
         {
             if(priority >= 1 && priority <= 3)
             {
-                Item *ele = new Item;
-                ele->value = value;
-                ele->priority = priority;
-            }
-            switch (priority)
-            {
-            case 1:
-                q1->enqueue(ele);
-                break;
-            case 2:
-                q1->enqueue(ele);
+                Item ele;
+                ele.value = value;
+                ele.priority = priority;
+                switch (priority)
+                {
+                case 1:
+                    q1->enqueue(ele);
+                    break;
+                case 2:
+                    q2->enqueue(ele);
 
-                break;
-            case 2:
-                q1->enqueue(ele);
-                break;
-            
-            
+                    break;
+                case 3:
+                    q3->enqueue(ele);
+                    break;
+                }
             }
             
         }
 
+        int get_highest_priority()
+        {
+            if(!q1->is_empty())
+            {
+                return q1->first();
+            }
+            else if(!q2->is_empty())
+            {
+                return q2->first();
+            }
+            else
+            {
+                return q3->first();
+            }
+            return -1;
+        }
+
+        void delete_highest_priority()
+        {
+            if(!q1->is_empty())
+            {
+                q1->dequeue();
+            }
+            else if(!q2->is_empty())
+            {
+                q2->dequeue();
+
+            }
+            else
+            {
+                q3->dequeue();
+            }
+        }
 
 
 
@@ -109,4 +147,25 @@ class PriorityQueue
 
 int main()
 {
+    PriorityQueue q(10);
+
+    q.insert(10, 1);
+    q.insert(5, 2);
+    q.insert(1, 3);
+
+    cout << q.get_highest_priority() << endl;
+    q.delete_highest_priority();
+    cout << q.get_highest_priority() << endl;
+
+    q.insert(69,1);
+    q.delete_highest_priority();
+    q.delete_highest_priority();
+
+
+    cout << q.get_highest_priority() << endl;
+
+
+    
+
+
 }
