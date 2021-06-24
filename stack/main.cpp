@@ -11,7 +11,7 @@ int main()
     ArrayStack s(5);
     ListStack s2;
 
-    s2.push(6);
+    s.push(6);
     s2.push(7);
     s2.push(8);
 
@@ -19,7 +19,7 @@ int main()
 
     cout << endl << endl;
 
-    cout << s2.peek(4) << endl;
+    cout << s.peek(1) << endl;
 
     
 
