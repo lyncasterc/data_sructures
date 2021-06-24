@@ -2,6 +2,7 @@
 #include <array>
 #include "ArrayQueue.h"
 #include "ListQueue.h"
+#include "DEQueue.h"
 
 using namespace std;
 
@@ -9,16 +10,11 @@ int main()
 {
     ArrayQueue q(10);
     ListQueue q2;
+    DEQueue q3(10);
     
 
     
-    q2.enqueue(5);
-    q2.enqueue(6);
-    q2.enqueue(7);
-
-    q2.dequeue();
     
-    q2.display();
 
 
 }

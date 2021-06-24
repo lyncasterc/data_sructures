@@ -20,6 +20,13 @@ class DEQueue : public ArrayQueue
             }
         }
 
+        void front_enqueue(int value)
+        {
+            if (front != -1)
+            {
+                arr[front--] = value;
+            }
+        }
 
 };
 #endif
