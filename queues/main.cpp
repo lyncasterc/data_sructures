@@ -9,6 +9,7 @@ int main()
 {
     ArrayQueue q(10);
     ListQueue q2;
+    
 
     
     q2.enqueue(5);

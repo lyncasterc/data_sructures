@@ -21,6 +21,7 @@ class ArrayQueue
             front = rear = 0;
         }
 
+        //inserting from rear
         void enqueue(int val)
         {
             if(!is_full())
@@ -30,6 +31,7 @@ class ArrayQueue
             }
         }
 
+        // removing from front 
         void dequeue()
         {
             if(!is_empty())
