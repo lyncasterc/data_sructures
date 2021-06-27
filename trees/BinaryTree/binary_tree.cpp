@@ -61,12 +61,28 @@ class BinaryTree
             }
         };
 
-        void inorder()
+        void inorder(Node *node)
         {
+            if(node)
+            {
+                inorder(node->left_child);
+                cout << node->data << " ";
+                inorder(node->right_child);
 
+            }
         };
-        void postorder();
-        void levelorder();
+
+        void postorder(Node *node)
+        {
+            if(node)
+            {
+                postorder(node->left_child);
+                postorder(node->right_child);
+                cout << node->data << " ";
+            }
+        };
+
+        void levelorder(Node *node);
         void height();
 
 
@@ -76,6 +92,6 @@ int main()
 {
     BinaryTree tree;
     tree.create_tree();
-    tree.preorder(tree.root);
+    tree.postorder(tree.root);
 }
 
