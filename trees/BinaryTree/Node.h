@@ -2,6 +2,7 @@
 #define Node_H
 
 using namespace std;
+
 class Node
 {
     public:
