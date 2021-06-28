@@ -2,6 +2,7 @@
 #include <array>
 #include "Node.h"
 #include "Queue.h"
+#include "Stack.h"
 
 using namespace std;
 
@@ -61,6 +62,20 @@ class BinaryTree
             }
         };
 
+        void loop_pre(Node *node)
+        {
+            Queue q(100);
+            Node *temp;
+            q.enqueue(node);
+
+            while(!q.is_empty())
+            {
+                temp = q.dequeue();
+                cout << temp->data << " ";
+                
+            }
+        }
+
         void inorder(Node *node)
         {
             if(node)
@@ -103,7 +118,28 @@ class BinaryTree
         };
 
 
-        void height();
+        int height(Node *node)
+        {
+    
+            if(!node)
+            { return 0; }
+
+            else
+            {
+                int left_count = height(node->left_child); 
+                int right_count = height(node->right_child);
+
+                    if (left_count > right_count)
+                {   
+                    return left_count + 1;
+                }
+                else
+                {
+                    return right_count + 1;
+                }
+            }
+            
+        };
 
 
 };
@@ -111,7 +147,18 @@ class BinaryTree
 int main()
 {
     BinaryTree tree;
-    tree.create_tree();
-    tree.levelorder(tree.root);
+    tree.root = new Node;
+    tree.root->data = 1;
+
+    tree.root->right_child = new Node;
+    tree.root->right_child->data = 3;
+
+    tree.root->left_child = new Node;
+    tree.root->left_child->data = 2;
+
+
+
+
+    cout << tree.height(tree.root);
 }
 
