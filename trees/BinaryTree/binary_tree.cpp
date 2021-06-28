@@ -82,7 +82,27 @@ class BinaryTree
             }
         };
 
-        void levelorder(Node *node);
+        void levelorder(Node *node)
+        {
+            Queue q(100);
+            Node *temp;
+            q.enqueue(node);
+
+            while(!q.is_empty())
+            {
+                temp = q.dequeue();
+                cout << temp->data << " ";
+
+                if (temp->left_child)
+                { q.enqueue(temp->left_child); }
+
+                if (temp->right_child)
+                { q.enqueue(temp->right_child); }
+                
+            }
+        };
+
+
         void height();
 
 
@@ -92,6 +112,6 @@ int main()
 {
     BinaryTree tree;
     tree.create_tree();
-    tree.postorder(tree.root);
+    tree.levelorder(tree.root);
 }
 
