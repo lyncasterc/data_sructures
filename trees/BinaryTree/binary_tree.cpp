@@ -153,13 +153,15 @@ class BinaryTree
         int height(Node *node)
         {
     
+            int left_count, right_count;  
+        
             if(!node)
             { return 0; }
 
             else
             {
-                int left_count = height(node->left_child); 
-                int right_count = height(node->right_child);
+                left_count = height(node->left_child); 
+                right_count = height(node->right_child);
 
                     if (left_count > right_count)
                 {   
@@ -167,11 +169,35 @@ class BinaryTree
                 }
                 else
                 {
-                    return right_count + 1;
+                    return right_count + 1 ;
                 }
             }
             
         };
+
+        int count_nodes(Node *node)
+        {
+            if(!node)
+            { return 0; }
+
+            else
+            { 
+                int left_count = count_nodes(node->left_child);
+                int right_count = count_nodes(node->right_child);
+                return left_count + right_count + 1;
+            }
+        }
+
+        int count_leaf_nodes(Node *node)
+        {
+            if(!node->left_child && !node->right_child)
+            { return 1; }
+
+            int left_count = count_leaf_nodes(node->left_child);
+            int right_count = count_leaf_nodes(node->right_child);
+
+            return left_count + right_count;
+        }
 
 
 };
@@ -188,7 +214,12 @@ int main()
     tree.root->right_child = new Node;
     tree.root->right_child->data = 3;
 
+    tree.root->right_child->right_child = new Node;
+    tree.root->right_child->left_child = new Node;
 
-    tree.loop_in(tree.root);
+    tree.root->right_child->right_child->data = 4;
+    tree.root->right_child->left_child->data = 5;
 
+
+    cout << tree.count_leaf_nodes(tree.root);
 }
