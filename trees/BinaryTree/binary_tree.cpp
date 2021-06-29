@@ -64,18 +64,27 @@ class BinaryTree
 
         void loop_pre(Node *node)
         {
-            Queue q(100);
-            Node *temp;
-            q.enqueue(node);
-
-            while(!q.is_empty())
+            Stack s(100);
+            Node *temp = node;
+            
+            while(temp || !s.is_empty())
             {
-                temp = q.dequeue();
-                cout << temp->data << " ";
+                if(temp)
+                {
+                    cout << temp->data << " ";
+                    s.insert(temp);
+                    temp = temp->left_child;
+                }
+                else
+                {
+                    temp = s.pop();
+                    temp = temp->right_child;
+                }
                 
             }
         }
 
+        
         void inorder(Node *node)
         {
             if(node)
@@ -150,15 +159,13 @@ int main()
     tree.root = new Node;
     tree.root->data = 1;
 
-    tree.root->right_child = new Node;
-    tree.root->right_child->data = 3;
-
     tree.root->left_child = new Node;
     tree.root->left_child->data = 2;
 
+    tree.root->right_child = new Node;
+    tree.root->right_child->data = 3;
 
 
+    tree.loop_pre(tree.root);
 
-    cout << tree.height(tree.root);
 }
-
