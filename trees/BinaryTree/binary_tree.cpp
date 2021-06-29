@@ -84,7 +84,30 @@ class BinaryTree
             }
         }
 
-        
+        void loop_in(Node *node)
+        {
+            Stack s(100);
+            Node *temp = node;
+            
+            while(temp || !s.is_empty())
+            {
+                while(temp)
+                {
+                    s.insert(temp);
+                    temp = temp->left_child;
+                }
+
+                temp = s.pop();
+                cout << temp->data << " ";
+                temp = temp->right_child;
+                
+                
+            }
+        }
+
+
+
+
         void inorder(Node *node)
         {
             if(node)
@@ -166,6 +189,6 @@ int main()
     tree.root->right_child->data = 3;
 
 
-    tree.loop_pre(tree.root);
+    tree.loop_in(tree.root);
 
 }
