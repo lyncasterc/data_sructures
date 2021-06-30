@@ -47,7 +47,50 @@ class BinarySearchTree
         { node->right_child = insert(node->right_child, key); }
 
         return node;
+    }
 
+    Node *min_val_node(Node *node)
+    {
+        Node *current = node;
+
+        while(current && current->left_child)
+        { current = current->left_child; }
+
+        return current;
+    }
+
+    Node *delete_node(Node *node, int key)
+    {
+        if(!node)
+        { return node; }
+
+        if(key < node->data)
+        { node->left_child = delete_node(node->left_child, key); }
+
+        else if (key > node->data)
+        { node->right_child = delete_node(node->right_child, key); }
+
+        else
+        {
+            if(!node->left_child)
+            {
+                Node *temp = node->right_child;
+                delete node;
+                return temp;
+            }
+            else if (!node->right_child)
+            {
+                Node *temp = node->left_child;
+                delete node;
+                return temp;
+            }
+            
+            Node *temp = min_val_node(node->right_child);
+            node->data = temp->data;   
+            node->right_child = delete_node(node->right_child, temp->data);
+
+        }
+        return root;
     }
 };
 
