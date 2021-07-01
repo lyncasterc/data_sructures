@@ -104,6 +104,8 @@ int main()
     t.insert(t.root, 5);
     t.insert(t.root, 6);
 
+    
+
 
     
 }
