@@ -96,6 +96,30 @@ class AVLTree
             return nr;
         };
 
+        Node *rl_rotation(Node *node)
+        {
+            Node *nr = node->right;
+            Node *nrl = nr->left;
+
+            //rotation
+            node->right = nrl->left;
+            nr->left = nrl->right; 
+            nrl->left = node;
+            nrl->right = nr;
+
+            //updating heights
+            node->height = 1 + max(height(node->left), height(node->right));
+            nrl->height = 1 + max(height(nrl->left), height(nrl->right));
+            nr->height = 1 + max(height(nr->left), height(nr->right));
+
+
+            if(root == node)
+            { root = nrl; }
+
+            return nrl;
+
+        }
+
 
 
         Node *insert(Node *node, int key)
@@ -122,9 +146,10 @@ class AVLTree
             { return lr_rotatation(node); }
             else if (get_balance_factor(node) == -2 && get_balance_factor(node->right) == -1)
             { return rr_rotation(node); }
+            else if (get_balance_factor(node) == -2 && get_balance_factor(node->right) == 1)
+            { return rl_rotation(node); }
 
             return node; 
-
 
         }        
 
@@ -135,8 +160,9 @@ int main()
 {
     AVLTree t;
     t.root = t.insert(t.root, 10);
-    t.root = t.insert(t.root, 20);
     t.root = t.insert(t.root, 30);
+    t.root = t.insert(t.root, 20);
 
     cout << t.root->key;
+    cout << t.root->left->key;
 }
