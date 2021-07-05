@@ -151,18 +151,94 @@ class AVLTree
 
             return node; 
 
-        }        
+        }  
+
+        Node *min_val_node(Node *node)
+        {
+            Node *current = node;
+
+            while(current && current->left)
+            { current = current->left; }
+
+            return current;
+        }
+
+        Node *delete_node(Node *node, int key)
+        {
+            if(!node)
+            { return node; }
+
+            if(key < node->key)
+            { node->left = delete_node(node->left, key); }
+
+            else if (key > node->key)
+            { node->right = delete_node(node->right, key); }
+
+            else
+            {
+                if(!node->left)
+                {
+                    Node *temp = node->right;
+                    delete node;
+                    return temp;
+                }
+                else if (!node->right)
+                {
+                    Node *temp = node->left;
+                    delete node;
+                    return temp;
+                }
+                
+                Node *temp = min_val_node(node->right);
+                node->key = temp->key;   
+                node->right = delete_node(node->right, temp->key);
+
+            }
+
+            //update height
+            node->height = 1 + max(height(node->left), height(node->right));
+
+            //rotations
+            int balance =  get_balance_factor(node);
+
+            // L1 Rotation
+            if (balance == 2 && get_balance_factor(node->left) == 1) 
+            { return ll_rotation(node); } 
+
+            else if (balance == 2 && get_balance_factor(node->left) == -1)  // L-1 Rotation
+            {return lr_rotatation(node);}
+
+             else if (balance == -2 && get_balance_factor(node->right) == -1)  // R-1 Rotation
+            {return rr_rotation(node);}
+
+             else if (balance == -2 && get_balance_factor(node->right) == 1) // R1 Rotation
+            {return rl_rotation(node);}
+
+             else if (balance == 2 && get_balance_factor(node->left) == 0)  // L0 Rotation
+            {return ll_rotation(node);}
+
+             else if (balance == -2 && get_balance_factor(node->right) == 0)  // R0 Rotation
+            {return rr_rotation(node);}
+            
+
+            return root;
+
+
+        }
+};
 
         
-};
 
 int main()
 {
     AVLTree t;
-    t.root = t.insert(t.root, 10);
     t.root = t.insert(t.root, 30);
+    t.root = t.insert(t.root, 40);
     t.root = t.insert(t.root, 20);
+    t.root = t.insert(t.root, 10);
+
+    t.root = t.delete_node(t.root, 40);
 
     cout << t.root->key;
-    cout << t.root->left->key;
+
 }
