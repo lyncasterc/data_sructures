@@ -6,9 +6,9 @@ using namespace std;
 class Node
 {
     public:
-        int data;
-        Node *left_child = NULL;
-        Node *right_child = NULL;
+        int key;
+        Node *left = NULL;
+        Node *right = NULL;
 };
 
 class BinarySearchTree
@@ -21,14 +21,14 @@ class BinarySearchTree
         if(!node)
         { return NULL; }
         
-        if(node->data == key)
-        { return node->data; }
+        if(node->key == key)
+        { return node->key; }
 
-        if(key < node->data)
-        { return search(node->left_child, key); }
+        if(key < node->key)
+        { return search(node->left, key); }
 
-        if(key > node->data)
-        { return search(node->right_child, key); }
+        if(key > node->key)
+        { return search(node->right, key); }
     }
 
     Node *insert(Node *node, int key)
@@ -36,15 +36,15 @@ class BinarySearchTree
         if(!node)
         {
             node = new Node;
-            node->data = key;
+            node->key = key;
             return node;
         }
 
-        if(key < node->data)
-        { node->left_child = insert(node->left_child, key); }
+        if(key < node->key)
+        { node->left = insert(node->left, key); }
 
-        else if(key > node->data)
-        { node->right_child = insert(node->right_child, key); }
+        else if(key > node->key)
+        { node->right = insert(node->right, key); }
 
         return node;
     }
@@ -53,8 +53,8 @@ class BinarySearchTree
     {
         Node *current = node;
 
-        while(current && current->left_child)
-        { current = current->left_child; }
+        while(current && current->left)
+        { current = current->left; }
 
         return current;
     }
@@ -64,30 +64,30 @@ class BinarySearchTree
         if(!node)
         { return node; }
 
-        if(key < node->data)
-        { node->left_child = delete_node(node->left_child, key); }
+        if(key < node->key)
+        { node->left = delete_node(node->left, key); }
 
-        else if (key > node->data)
-        { node->right_child = delete_node(node->right_child, key); }
+        else if (key > node->key)
+        { node->right = delete_node(node->right, key); }
 
         else
         {
-            if(!node->left_child)
+            if(!node->left)
             {
-                Node *temp = node->right_child;
+                Node *temp = node->right;
                 delete node;
                 return temp;
             }
-            else if (!node->right_child)
+            else if (!node->right)
             {
-                Node *temp = node->left_child;
+                Node *temp = node->left;
                 delete node;
                 return temp;
             }
             
-            Node *temp = min_val_node(node->right_child);
-            node->data = temp->data;   
-            node->right_child = delete_node(node->right_child, temp->data);
+            Node *temp = min_val_node(node->right);
+            node->key = temp->key;   
+            node->right = delete_node(node->right, temp->key);
 
         }
         return root;
@@ -99,7 +99,7 @@ int main()
     BinarySearchTree t;
     t.root = t.insert(t.root, 4);
 
-    cout << t.root->data;
+    cout << t.root->key;
 
     t.insert(t.root, 5);
     t.insert(t.root, 6);

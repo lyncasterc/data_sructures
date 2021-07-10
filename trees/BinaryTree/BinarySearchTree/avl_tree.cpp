@@ -120,8 +120,6 @@ class AVLTree
 
         }
 
-
-
         Node *insert(Node *node, int key)
         {
             if(!node)
@@ -142,10 +140,13 @@ class AVLTree
 
             if(get_balance_factor(node) == 2 && get_balance_factor(node->left) == 1)
             { return ll_rotation(node); }
+
             else if (get_balance_factor(node) == 2 && get_balance_factor(node->left) == -1)
             { return lr_rotatation(node); }
+
             else if (get_balance_factor(node) == -2 && get_balance_factor(node->right) == -1)
             { return rr_rotation(node); }
+            
             else if (get_balance_factor(node) == -2 && get_balance_factor(node->right) == 1)
             { return rl_rotation(node); }
 
@@ -208,16 +209,16 @@ class AVLTree
             else if (balance == 2 && get_balance_factor(node->left) == -1)  // L-1 Rotation
             {return lr_rotatation(node);}
 
-             else if (balance == -2 && get_balance_factor(node->right) == -1)  // R-1 Rotation
+            else if (balance == -2 && get_balance_factor(node->right) == -1)  // R-1 Rotation
             {return rr_rotation(node);}
 
-             else if (balance == -2 && get_balance_factor(node->right) == 1) // R1 Rotation
+            else if (balance == -2 && get_balance_factor(node->right) == 1) // R1 Rotation
             {return rl_rotation(node);}
 
-             else if (balance == 2 && get_balance_factor(node->left) == 0)  // L0 Rotation
+            else if (balance == 2 && get_balance_factor(node->left) == 0)  // L0 Rotation
             {return ll_rotation(node);}
 
-             else if (balance == -2 && get_balance_factor(node->right) == 0)  // R0 Rotation
+            else if (balance == -2 && get_balance_factor(node->right) == 0)  // R0 Rotation
             {return rr_rotation(node);}
             
 
