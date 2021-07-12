@@ -58,7 +58,7 @@ class Heap
                 {
                     swap_keys(i, j);
                     i = j;
-                    j *= 2;
+                    j = j* 2 + 1;
                 }
                 else
                 { break; }
