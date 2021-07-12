@@ -41,15 +41,14 @@ class Heap
         void delete_key()
         {
             int i, j, length;
+            length = heap.size();
             heap[0] = heap.back();
             heap.pop_back();
-            length = heap.size() - 1;
             
-        
             i = 0;
-            j = 2 * i;
+            j = i* 2 + 1;
 
-            while (j > length)
+            while (j < length - 1)
             {
                 
                 if(heap[j + 1] > heap[j])
