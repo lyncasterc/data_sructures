@@ -14,10 +14,10 @@ class Heap
             heap.emplace_back(key);
             auto i = heap.size() - 1;
 
-            while(i > 0 && key > heap[ i % 2 == 0 ? (i/2)-1 : (i/2) ] )
+            while(i > 0 && key > heap[(i - 1) / 2] )
             {
-                heap[i] = heap[ i % 2 == 0 ? (i/2)-1 : (i/2)];
-                i = i % 2 == 0 ? (i/2)-1 : (i/2);
+                heap[i] = heap[(i - 1) / 2];
+                i = (i - 1) / 2;
             }
             heap[i] = key;
         }
