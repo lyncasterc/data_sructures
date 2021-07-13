@@ -29,14 +29,48 @@ class MaxHeap
             heap[i] = key;
         }
 
-        void create_heap(int a[], int size)
+        void create_heap(int arr[], int size)
         {
             for (int i = 0; i < size; i++)
             { 
-                insert(a[i]);
+                insert(arr[i]);
             }
             
         }
+
+        void arr_swap(int arr[], int i, int j)
+        {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;            
+        }
+
+        void max_heapify(int arr[], int size)
+        {
+            for (int i = ( size / 2) - 1; i >= 0; i--)
+            {
+                int j = 2 * i + 1; //left child
+
+                while(j < size - 1)
+                {
+                    if(arr[j] < arr[j + 1]) //comparing left child and right child
+                    { j = j + 1; }
+
+
+                    if(arr[j] > arr[i])
+                    {
+                        arr_swap(arr, i, j);
+                        i = j;
+                        j = 2 * i + 1;
+                    }
+
+                    else
+                    { break; }
+
+                }
+            }
+
+        };
 
         void swap_keys(int i, int j)
         {
@@ -81,22 +115,19 @@ class MaxHeap
             }
             
         }
-
-
 };
 
 int main()
 {
 
-    Heap h;
-    int arr[] = {40, 35, 15, 30, 10, 12, 6, 5, 20};
+    MaxHeap h;
+    int arr[] = {5,10,30,20,35,40,15};
     int arr_size = sizeof(arr) / sizeof(arr[0]);
-    h.create_heap(arr, arr_size);
+    h.max_heapify(arr, arr_size);
 
-    h.display();
-
-    // h.delete_key();
-    // cout << endl;
-    // h.display();
-
+    for (auto &&i : arr)
+    {
+        cout << i << " ";
+    }
+    
 };
