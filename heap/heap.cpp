@@ -4,11 +4,18 @@
 
 using namespace std;
 
-class Heap
+class MaxHeap
 {
     private:
         vector<int> heap;
+
     public:
+        bool is_empty() const 
+        { return heap.empty(); }
+
+        int get_max() const
+        { return heap[0]; }
+
         void insert(int key)
         {
             heap.emplace_back(key);
