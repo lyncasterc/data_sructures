@@ -1,0 +1,27 @@
+Critera for sorting:
+    - Number of comparisions -> decides the time complexity
+    - Number of swaps
+    - adaptive 
+        - if the list is already sorted, then it is O(n)
+    - stable: perserves the relative order of equal (duplicate) elements
+    
+- Comparison based sorting:
+    - O(n^2):
+        - Bubble sort
+        - Selection sort
+        - Insertion sort
+    
+    - O(n log n):
+        - Merge sort
+        - Heap sort
+        - Quick sort
+        - tree sort
+    
+    - O(n):
+        - Counting sort
+        - Radix sort
+        - Bucket/bin sort
+    
+    - O(n^3/2):
+        - shell sort
+
