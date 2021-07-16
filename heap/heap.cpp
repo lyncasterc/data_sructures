@@ -69,7 +69,6 @@ class MaxHeap
 
                 }
             }
-
         };
 
         void swap_keys(int i, int j)
