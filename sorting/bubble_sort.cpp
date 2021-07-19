@@ -11,6 +11,8 @@ using std::endl;
 
 // in bubble sort, one pass will give you largest element in the vector at the end
 // n swaps, n greatest elements starting from the end.
+// requires n-1 passes (outer loop)
+
 
 void bubble_sort(vector<int> &v)
 {
