@@ -11,14 +11,9 @@ void selection_sort(vector<int> &v)
 
     for (int i = 0; i < size; i++)
     {
-        j = k = i;
 
-        // this loop makes more sense as a for loop because 
-        // j is going up by one no matter what
-        while(j < size - 1 )
-        {   
-            j += 1;
-        
+        for (j = k = i; j < size; j++)
+        {
             if(v[j] < v[k])
             { k = j; }
         }
