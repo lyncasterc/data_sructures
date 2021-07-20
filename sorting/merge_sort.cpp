@@ -37,6 +37,33 @@ vector<int> merge(vector<int> v1, vector<int> v2)
 
 }
 
+vector<int>merge(vector<int> v, int start, int mid, int end)
+{
+    int i = start, j = mid + 1;
+    vector<int> merged_vec;
+
+    while(i < mid && j < end)
+    {
+        if(v[i] < v[j])
+        {
+            merged_vec.push_back(v[i++]);
+        }
+        else if(v[i] > v[j])
+        {
+            merged_vec.push_back(v[j++]);
+        }
+    }
+
+    while(i < mid)
+    { merged_vec.push_back(v[i++]); }
+
+    while(j < end)
+    { merged_vec.push_back(v[j++]); }
+
+    return merged_vec;
+}
+
+
 int main()
 {
     vector<int> nums = {2, 10, 18, 20, 23};
@@ -48,5 +75,18 @@ int main()
         cout << i << " ";
     }
     
+
+    vector<int> nums3 = {2, 5, 8, 12, 3, 6, 7, 10};
+    int nums3_size = nums3.size();
+    vector<int> merged_nums2 = merge(nums3, 0, nums3_size / 2, nums3_size);
+
+    cout << endl << endl;
+
+    for (auto &&i : merged_nums2)
+    {
+        cout << i << " ";
+    }
+
+
     
 }
