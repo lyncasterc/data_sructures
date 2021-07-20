@@ -5,12 +5,13 @@ using std::vector;
 using std::cout;
 using std::endl;
 
+// worst case O(n^2), best case O(nlogn)
 void quick_sort(vector<int> &v, int start, int end)
 {
     if((end - start) > 1)
     {
-        int pivot = v[start], i = 1, j = end - 1, temp;
-        while(j > i)
+        int pivot = v[start], i = start + 1, j = end - 1, temp;
+        while(j >= i)
         {
             if(v[i] > pivot && v[j] <= pivot)
             { 
@@ -45,8 +46,8 @@ void quick_sort(vector<int> &v, int start, int end)
 
 int main()
 {
-    vector<int> nums = {8, 6, 3, 2, 5, 4};
-    vector<int> nums2 = {69, 2, 5, 30, 1, 0, 11, 3, 6, 9};
+    vector<int> nums = {11, 13, 7, 12, 16, 9, 24, 5, 10, 3};
+    vector<int> nums2 = {50, 70, 60, 90, 40, 80, 10, 20, 30};
     int nums_size = nums.size();
     int nums2_size = nums2.size();
 
