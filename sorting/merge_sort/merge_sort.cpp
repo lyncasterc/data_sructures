@@ -69,8 +69,6 @@ void merge_sort(int arr[], int start, int end)
         merge_sort(arr, start, mid);
         merge_sort(arr, mid + 1, end);
         merge(arr, start, mid, end);
-
-
     }
 }
 
