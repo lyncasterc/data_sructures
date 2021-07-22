@@ -69,7 +69,7 @@ void bucket_sort(int arr[], int size)
         
     }
     
-
+    delete [] bucket;
 
 }
 
