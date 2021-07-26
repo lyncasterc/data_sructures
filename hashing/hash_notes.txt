@@ -1,0 +1,18 @@
+- Analysis of hashes are based on loading factor.
+ - loading factor = n/size -> written as lambda
+ - lambda is the number of items in the linked list 
+
+
+
+Chaining:
+    - h(x) = x % 10 -> this isnt the only function you can use 
+    - each element in hash table is a linked list
+    - if there is a collision, the linked list will be extended
+    - avg succesful search is 1 + lambda/2
+    - unsuccessfull search is 1 + lambda
+
+    - Problem: with h(x) = x % 10
+        - if all the numbers end in the same digiit, they will be inserted at the same key
+        - this would mean that the lamba assertion fails 
+        - to choose proper hash function, we need an idea of the keys we are working with
+
