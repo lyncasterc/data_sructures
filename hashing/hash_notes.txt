@@ -29,4 +29,18 @@ Linear probing:
 
     - Deleting:
         - if key is found, rehash all the remaining elements
-        - deleting is not recommended in linear probing. 
+        - deleting is not recommended in linear probing.
+
+Qudratic probing:
+    - if h(x) = x % 10, then when collision occurs, we add i^2 to index, where i is 0.1, 1, 2, 3, ...
+    - almost exactly the same as linear probing, expect replace i by i^2.
+
+Double hashing:
+    - using two hash functions. If collision occurs with one, use the other
+    - result of second hash function should not return 0, and should utilize all spaces.
+    ex:
+        - h(x) = x % 10
+        - h2(x) = 7 - (x % 7)
+        - h'(x) = (h(x) + i * h2(x))) % 10, where i is 0, 1, 2, 3, ...
+
+        
