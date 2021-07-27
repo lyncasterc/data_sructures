@@ -29,11 +29,44 @@ class Hash
         void insert(int val)
         {
             int index = hash_function(val);
-            Node *node = new Node;
+            Node *node = new Node, *temp;
             node->value = val;
 
+            if(!hash_arr[index])
+            {
+                hash_arr[index] = node;  
+            }
+            else
+            {
+                Node *prev;
+                temp = hash_arr[index];
+
+                while(val >= temp->value && temp)
+                {
+                    prev = temp;
+                    temp = temp->next;
+                }
+
+                if(!prev)
+                {
+                    if(temp == hash_arr[index])
+                    {
+                        node->next = hash_arr[index];
+                        hash_arr[index] = node;
+                    }
+                    else
+                    {
+                        node->next = prev->next;
+                        prev->next = node;
+                    }
+                }
+
             
+            }
+
         }
+
+        
         ~Hash()
         {
             delete [] hash_arr;
