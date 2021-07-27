@@ -16,3 +16,17 @@ Chaining:
         - this would mean that the lamba assertion fails 
         - to choose proper hash function, we need an idea of the keys we are working with
 
+Linear probing:
+    - if h(x) = x % 10, then whenever a collision occurs, we move the index by 1 and check again.
+    - cyclic, it wraps around if there is a collision at the end
+    - loading factor should not be more than 0.5
+    - avg successful search is (1/lambda * ln(1/(1-lambda)))
+    - avg unsuccessful search is (1/(1-lambda)
+
+    - Downsides:
+        - only half of the hash table is used, so space is wasted
+        - primary clustering of keys
+
+    - Deleting:
+        - if key is found, rehash all the remaining elements
+        - deleting is not recommended in linear probing. 
