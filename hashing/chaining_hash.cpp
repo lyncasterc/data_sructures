@@ -24,6 +24,11 @@ class Hash
         Hash()
         {
             hash_arr = new Node* [10];
+            for (auto i = 0; i < 10; i++)
+            {
+                hash_arr[i] = nullptr;
+            }
+            
         }
 
         void insert(int val)
@@ -94,5 +99,11 @@ class Hash
 
 int main()
 {
+    Hash h;
+
+    h.insert(1);
+    h.insert(2);
+    cout << h.search(2) << endl; // -> 2
+    cout << h.search(3) << endl; // -> -1
 
 }
