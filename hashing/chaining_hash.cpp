@@ -61,9 +61,28 @@ class Hash
                     }
                 }
 
-            
+            }
+        }
+
+        int search(int val)
+        {
+            int result = -1;
+            int index = hash_function(val);
+            Node *node;
+
+            node = hash_arr[index];
+
+            while(node)
+            {
+                if(node->value == val)
+                {
+                    result = val;
+                    break;
+                }
+                node = node->next;
             }
 
+            return result;
         }
 
         
