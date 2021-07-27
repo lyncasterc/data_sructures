@@ -43,4 +43,17 @@ Double hashing:
         - h2(x) = 7 - (x % 7)
         - h'(x) = (h(x) + i * h2(x))) % 10, where i is 0, 1, 2, 3, ...
 
-        
+
+Hash function ideas:
+    - Mod:
+        - loading factor must be <= 0.5. Meaning, half filled.
+        - size of hash table should be a prime number, to reduce collisions.
+    - Mid-square:
+        - example: key = 11. 
+            - 11^2 = 121 -> use middle digit as the index
+            -  number of middle digits to use is up to you
+    - folding:
+        - example: key = 123347 
+        - take the digits and add
+        - 12+33+47 = 92 -> this can be the index or you can add 9+2=11 to use as index
+        - for string keys, add the ascii value of each character.
