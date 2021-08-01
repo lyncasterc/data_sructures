@@ -47,7 +47,7 @@ class Hash
             hash_arr[index] = val;
         }
 
-        //TODO: write search, write get 
+        
 
 
 };
