@@ -24,7 +24,6 @@ void bfs(int start_vtx, int adj_matrix[][7], int num_of_vtx)
         for (int con_vtx = 0; con_vtx < num_of_vtx; con_vtx++)
         {   
             // if the current vertex is connected to other vertices
-            
             // which have not been visited
             if(adj_matrix[cur_vtx][con_vtx] == 1 && visited_arr[con_vtx] == 0)
             {
