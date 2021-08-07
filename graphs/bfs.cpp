@@ -35,7 +35,6 @@ void bfs(int start_vtx, int adj_matrix[][7], int num_of_vtx)
         }
         
     }
-    // cout << endl;
 }
 
 
