@@ -115,9 +115,9 @@ string solution_2(string str)
 int main()
 {
     string str = "25*5+2-10";
-    string str_2 = "((a+b)*c)-d^e^f";
+    string str_2 = "3*(4-2)+6";
 
-    cout << solution(str) << endl;
-    cout << solution_2(str_2) << endl;
+    // cout << solution(str) << endl;
+    cout << solution_2("1+3*(2*6)/2") << endl;
 
 }
