@@ -45,4 +45,7 @@ int main()
     std::cout << longest_substring_k_distinct_chars("araaci", 2)  << std::endl; // 4
     std::cout << longest_substring_k_distinct_chars("araaci", 1)  << std::endl; // 2
     std::cout << longest_substring_k_distinct_chars("cbbebi", 3)  << std::endl; // 5
+    std::cout << longest_substring_k_distinct_chars("ccaabbb", 2)  << std::endl; // 5
+    std::cout << longest_substring_k_distinct_chars("eceba", 2)  << std::endl; // 3
+
 }
